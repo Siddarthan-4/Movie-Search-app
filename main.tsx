@@ -5,11 +5,12 @@ import dataset from './movie search/data'
 
 export default function main(){
  const data=dataset()
- const disp_movie =data.map(mov => <Card img={mov.img} name={mov.name} rating={mov.rating} summary={mov.summary}/>)
-  return(
+ const disp_movie =data.map(mov => <Card key={mov.id} img={mov.img} name={mov.name} genre ={mov.genre} rating={mov.rating} summary={mov.summary}/>)
+
+ return(
     <>
     <Header/>
-    <div className="flex gap-3 m-[30px]">{disp_movie}</div>
+    <div className="flex gap-4 m-[30px]">{disp_movie}</div>
     </>
   );
 }
