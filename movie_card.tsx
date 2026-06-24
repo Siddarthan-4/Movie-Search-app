@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function Movie_card({key,img,name,genre,rating,summary}){
+export default function Movie_card({img,name,genre,rating,summary}){
     return(
         <div id="card" className="grid gap- h-[300px] grid-cols-3 w-[220px] p-[10px] border-[1px] border-yellow-200 rounded-[15px] hover:scale-[1.06]">
             

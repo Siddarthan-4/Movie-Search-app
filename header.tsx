@@ -1,20 +1,29 @@
 "use client"
 import React, { useRef } from "react"
-import dataset from "./data"
 import Card from './movie_card'
 import Listcard from "./fmovie_list"
+import {searchmovie} from "./data"
+ 
 
 export default function Header(){
 
     const [filtered_movies,setfiltered_movies]=React.useState([])
-    const disp_fmovie=filtered_movies.map(s => <Listcard key={s.id} img={s.img} name={s.name} year={s.year} /> )
-    const data=dataset()
+    const disp_fmovie=filtered_movies.map(s => <Listcard key={s.imdbId} img={s.Poster} name={s.Title} year={s.Year} /> )
+    
 
     function searching(e)
         {   
             e.preventDefault()
             const searched_movie=e.target.value
-            setfiltered_movies(searched_movie? data.filter(s => s.name.includes(searched_movie)): []);
+            if (searched_movie!=="")
+            {
+                searchmovie(searched_movie)
+                .then(data => {
+                    console.log(data);
+                    setfiltered_movies(data.Search || []);
+                })
+            }
+              
         }
 
     return(
@@ -26,12 +35,12 @@ export default function Header(){
            </div>
 
             <form  className=" flex items-center mr-[130] rounded-[10px] bg-gray-900"> 
-                <input type="text" onChange={searching} name="movie_name" autoComplete="off" placeholder="   Search here" className="h-[35px] w-[300px] p-[10px] focus:outline-none"/>
+                <input type="text" onChange={searching} name="movie_name" autoComplete="off" placeholder=" Search here" className="h-[35px] w-[300px] p-[10px] focus:outline-none"/>
             </form>
 
             {
                 disp_fmovie.length?
-                <div className="flex-col absolute top-[70px] right-[155px] border-[1px] border-white z-1 ">
+                <div className="flex-col max-h-[800px] overflow-y-auto absolute top-[70px] right-[155px] border-[1px] border-white z-1 overflow-x-auto">
                     {disp_fmovie}
                 </div>:
                 null

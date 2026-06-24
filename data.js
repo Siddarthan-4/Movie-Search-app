@@ -1,4 +1,4 @@
-export default function data(){
+export function data(){
     return(
         [
             {
@@ -42,4 +42,14 @@ export default function data(){
             }
         ]
     );
+}
+
+const api_key="561316a4"
+const base_url="http://www.omdbapi.com/?"
+
+
+export async function searchmovie(movie){
+    const response = await fetch(`${base_url}apikey=${api_key}&s=${movie}`);
+    const data = await response.json();
+    return data
 }
