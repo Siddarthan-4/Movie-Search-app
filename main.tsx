@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './movie search/header'
-import Card from './movie search/movie_card'
-import dataset from './movie search/data'
+import Header from './Movie-Search-app/header'
+import Card from './Movie-Search-app/movie_card'
+import dataset from './Movie-Search-app/data'
 
 export default function main(){
  const data=dataset()

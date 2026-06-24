@@ -6,8 +6,9 @@ export default function data(){
                 img:"/icons8-search-128.png",
                 name:"29",
                 genre:"romance,drama",
+                year:2026,
                 rating:8.9,
-                summary:"Sathya, a guy with 'identity crisis', working in IT , meets Viji and and falls in love with her. Will this love sustain ?  "
+                summary:"Sathya, a guy with  "
             },
             {
                 
@@ -15,6 +16,7 @@ export default function data(){
                 img:"/icons8-search-128.png",
                 name:"Sarvam Maya",
                 genre:"drama,feel good",
+                year:2026,
                 rating:9,
                 summary:"nalla padam"
             }
@@ -24,7 +26,8 @@ export default function data(){
                img:"/icons8-search-128.png",
                name:"Karuppu",
                genre:"drama,demi god",
-               rating:9.9,
+               year:2026,
+               rating:-9,
                summary:"p***a padam"
             }
             ,
@@ -33,6 +36,7 @@ export default function data(){
                img:"/icons8-search-128.png",
                name:"Koothi",
                genre:"drama,romance",
+               year:2025,
                rating:7.9,
                summary:"OK padam"
             }
